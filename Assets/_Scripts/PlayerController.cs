@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,13 +21,13 @@ public class PlayerController : MonoBehaviour
         move = value.Get<Vector2>();
     }
 
-    private void onAttack(InputValue value)
+    private void OnAttack(InputValue value)
     {
-        bool isAttack = value.isPressed;
-        if (isAttack)
+        if(value.isPressed == true)
         {
-            Debug.Log("aaaa");
+            Debug.Log("kkk");
             anim.SetTrigger("Attack");
+            Debug.Log("aaa");
         }
     }
 

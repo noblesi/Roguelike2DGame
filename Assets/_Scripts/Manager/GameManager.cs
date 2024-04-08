@@ -33,5 +33,6 @@ public class GameManager : Singleton<GameManager>
         {
             virtualCamera.Follow = PlayerInstance.transform;
         }
+        
     }
 }
