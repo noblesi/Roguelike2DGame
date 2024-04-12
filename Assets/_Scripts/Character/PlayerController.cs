@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     private Animator anim;
 
+    
+
     private void Start()
     {
         anim = GetComponent<Animator>();    
@@ -30,8 +32,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.Instance.isLive) return;
-
         if(move.x == 0 && move.y == 0)
         {
             anim.SetBool("isIdle", true);
@@ -64,8 +64,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!GameManager.Instance.isLive) return;
-
         Vector2 movement = new Vector2(move.x, move.y) * speed * Time.deltaTime;
         transform.Translate(movement);  
     }
